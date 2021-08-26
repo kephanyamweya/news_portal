@@ -200,7 +200,7 @@ public class App {
 
         //FILTERS
         exception(ApiException.class, (exception, req, res) -> {
-            ApiException err = exception;
+            ApiException err = (ApiException) exception;
             Map<String, Object> jsonMap = new HashMap<>();
             jsonMap.put("status", err.getStatusCode());
             jsonMap.put("errorMessage", err.getMessage());
