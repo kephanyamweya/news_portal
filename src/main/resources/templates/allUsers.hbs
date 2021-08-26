@@ -1,0 +1,56 @@
+{{#partial "content"}}
+    <div style="text-align:center;">
+        <a id="button" href="/user/new" class="btn btn-light" role="button">ADD USER</a><br><br><br>
+    </div>
+    <div class="container">
+        <div>
+            {{#if user}}
+                <h3 style="text-decoration:underline; text-align:center; margin-bottom:3%; color:white;"><strong>ALL USERS</strong></h3>
+                {{#each user }}
+                    <table align="center" style="text-align:center;">
+                        <tr>
+                            <th id="header">First Name</th>
+                            <th id="header">Second Name</th>
+                            <th id="header">Position</th>
+                            <th id="header">Department</th>
+                        </tr>
+                        <tr>
+                            <td id="data"><strong>{{ fName }} </strong></td>
+                            <td id="data">{{ sName }} </td>
+                            <td id="data">{{ position }}</td>
+                            <td id="data">{{ department }}</td>
+                       </tr>
+                    </table>
+                {{/each}}
+            {{else}}
+                <h1>No users registered yet!</h4>
+            {{/if}}
+        </div>
+    </div>
+{{/partial}}
+<style>
+    table,th#header,td#data {
+            border: 1px solid white;
+            border-collapse:collapse;
+        }
+        th#header, td#data {
+            padding: 15px;
+            border-left: 1px solid black;
+        }
+        th#header {
+            text-align: left;
+        }
+        table {
+            border-spacing: 5%;
+            margin-bottom:3%;
+            text-align:center;
+            color:white;
+        }
+        body{
+            text-align:center;
+            background-image: url("https://becosolutions.com/wp-content/uploads/2015/01/photo-backgrounds-7-hd-background-background-and-wallpaper.jpg");
+            background-repeat: no-repeat;
+            background-size:cover;
+            color:white;
+        }
+</style>

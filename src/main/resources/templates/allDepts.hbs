@@ -1,0 +1,36 @@
+{{#partial "content"}}
+    <div>
+        <a style="background-color:saddlebrown;" id="button" href="/dept/new" class="btn btn-outline-secondary btn-lg" role="button">ADD DEPARTMENT</a><br><br><br>
+    </div>
+    {{#if departments}}
+        <h2 style="text-decoration:underline; text-align:center; margin-bottom:3%; color:black;"><strong>DEPARTMENTS</strong></h2>
+        <div id="all">
+        {{#each departments }}
+            <div class="card bg-light mb-3" style="max-width: 18rem;">
+                <div class="card-header">{{ dName }}</div>
+                <div class="card-body">
+                    <h5 style="text-decoration:underline;" class="card-title">About</h5>
+                    <p class="card-text">{{ description }} .</p>
+                    <p class="card-text">Number of Employees: {{ employeeNo }}</p>
+                </div>
+            </div>
+        {{/each}}
+        {{else}}
+            <h1>No Departments registered yet!</h4>
+    </div>
+    {{/if}}
+{{/partial}}
+<style>
+    #all{
+        display:flex;
+        flex-direction:wrap;
+        justify-content:space-around;
+    }
+    body{
+        text-align:center;
+        background-image: url("http://getwallpapers.com/wallpaper/full/3/9/7/93962.jpg");
+        background-repeat: no-repeat;
+        background-size:cover;
+    }
+</style>
+{{> layout.hbs}}
