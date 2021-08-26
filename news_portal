@@ -1,0 +1,57 @@
+CREATE DATABASE test_database;
+\c test_database
+CREATE TABLE contacts (name varchar, age int, birthday timestamp);
+\d contacts
+ALTER TABLE contacts ADD family boolean;
+ALTER TABLE contacts DROP family;
+ALTER TABLE contacts ADD id serial PRIMARY KEY;
+INSERT INTO contacts (name, age, birthday) VALUES ('Kep',26,'1995-07-12');
+INSERT INTO contacts (name, age, birthday) VALUES ('Kep',26,'1995-07-12') RETURN id;
+INSERT INTO contacts (name, age, birthday) VALUES ('Kep',26,'1995-07-12') RETURNING id;
+SELECT name, birthday FROM contacts;
+SELECT * FROM contacts;
+SELECT * FROM contact WHERE birthday IN ('1992-01-01', '1999-01-01');
+UPDATE contacts SET name = 'Kepha' WHERE id = 1;
+\list
+\c kepha;
+\q
+\q
+CREATE DATABASE wildlife;
+\c wildlife;
+\q
+\c wildlife_tracker
+\l
+\q
+\c wildlife_tracker;
+\d sightings
+\d locations
+CREATE TABLE locations (name varchar,id int);
+DROP TABLE locations # FROM wildlife_tracker;
+ALTER TABLE contacts DROP family;
+ALTER TABLE contacts DROP id;
+ALTER TABLE locations DROP id;
+ALTER TABLE locations id varchar;
+ALTER TABLE locations ADD id varchar;
+DROP TABLE locations # FROM wildlife_tracker;
+DROP TABLE locations; # FROM wildlife_tracker;
+DROP TABLE locations; # From wildlife_tracker;
+\d locations
+\d sightings
+DROP TABLE sightings; # From wildlife_tracker;
+\d sightings
+DROP TABLE rangers; # From wildlife_tracker;
+CREATE TABLE sightings (id int,location_id int,ranger_id int, animal_id int,time timestamp);
+CREATE TABLE rangers (id int,name varchar,badge_number varchar,phone_number varchar);
+CREATE TABLE locations (id int,name varchar);
+INSERT INTO rangers (name,badge_number,phone_number) VALUES ('Kimani','5678','0703756874');
+INSERT INTO rangers (name,badge_number,phone_number,id int) VALUES ('Kimani','5678','0703756874',1);
+INSERT INTO rangers (name, badge_number, phone_number) VALUES ('Kimani','5678','0703756874');
+SELECT * FROM rangers;
+\dt
+DROP DATABASE wildlife_tracker
+DROP DATABASE wildlife_tracker_test
+;
+DROP DATABASE wildlife_tracker;
+DROP DATABASE wildlife_tracker_test;
+\q
+\s news_portal
